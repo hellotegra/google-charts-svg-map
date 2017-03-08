@@ -1,0 +1,10 @@
+general:
+  build_dir: dist
+test:
+  override:
+    - echo "test"
+deployment:
+  prod:
+    branch: master
+    commands:
+      - aws s3 sync . s3://tegra.design/google-charts-svg-map/ --delete
